@@ -32,12 +32,12 @@ Releases kısmından debian-kou-embedded-v2021-12-07.ova dosyası indirilir ve V
 ### Kurulan Paketler
 Debian kurulumunun ardından komut satırından itibaren kurulan tüm paketler şunlar:
 
-`xfce4 xfce4-goodies bash-completion linux-headers-amd64 firmware-linux gcc make gcc-arm-none-eabi gdb-multiarch lm4flash elinks`
+`xfce4 xfce4-goodies bash-completion linux-headers-amd64 firmware-linux gcc make gcc-arm-none-eabi gdb-multiarch lm4flash elinks git`
 
 
 ### VSCode Kurulumu ve Ayarlaması
 
-elinks bir komut satırı tarayıcısıdır. `elinks url` şeklinde çalıştırılabilir. VSCode'u indirmek için `elinks https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64` komutunu çalıştırılır ve indirmeye onay verilir. İndirmenin ardından .deb paketinden `sudo dpkg --install vscodepaketiismi.deb` ile VSCode kurulur. Ardından VSCode açılır ve geliştiricisi Seun LanLege olan `VsCode Action Buttons` eklentisini kurulur. Eklentinin yanındaki dişliye, oradan `Extension Settings`'e, oradan da `Edit in settings.json`'a tıklanır ve konfigürasyon dosyası açılır. Action Buttons'ta bir butonun konfigürasyonu 
+elinks bir komut satırı tarayıcısıdır. `elinks url` şeklinde çalıştırılabilir. VSCode'u indirmek için `elinks https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64` komutu çalıştırılır ve indirmeye onay verilir. İndirmenin ardından .deb paketinden `sudo dpkg --install vscodepaketiismi.deb` ile VSCode kurulur. Ardından VSCode açılır ve geliştiricisi Seun LanLege olan `VsCode Action Buttons` eklentisini kurulur. Eklentinin yanındaki dişliye, oradan `Extension Settings`'e, oradan da `Edit in settings.json`'a tıklanır ve konfigürasyon dosyası açılır. Action Buttons'ta bir butonun konfigürasyonu 
 
     {
                 "name": "Make and Flash ",
@@ -51,4 +51,7 @@ Açılacak settings.json dosyasına syntax yönergesinde istenilen butonlar ekle
 
 ### Tiva C Toolchaini
 
+https://github.com/yuvadm/tiva-c adresinde Texas Instruments'in kendi toolchaini GitHub'a yüklenmiş halde bulunur. `git clone https://github.com/yuvadm/tiva-c` komutu ile bulunan klasörün içerisine klonlandıktan sonra yereldeki `tiva-c` klasörünün içerisinde `boards` klasörünün içerisinde Tiva C'nin kod numarasıyla (`ek-tm4c123gxl`) isimlendirilmiş klasörün içerisinde her birinin kendi Makefile'ı bulunan örnek projeler bulunmaktadır. `tiva-c` klasörünün içerisinde `inc`, `usblib` ve benzeri gereken tüm klasörler bulunmaktadır.
 
+### Create New Project scripti
+Kendi yazdığım bu bash scripti kullanıcıdan proje ismini girdi olarak alıp ve temel projemizde gereken kelimeleri değiştirerek yeni bir proje oluşturmaktadır. Sözkonusu script `create_new_project.sh` adıyla bu repoda bulunacaktır. <!--- bulunmaktadır. --->
