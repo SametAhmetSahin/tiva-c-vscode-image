@@ -39,7 +39,7 @@ Debian kurulumunun ardından komut satırından itibaren kurulan tüm paketler �
 
 elinks bir komut satırı tarayıcısıdır. `elinks url` şeklinde çalıştırılabilir. VSCode'u indirmek için `elinks https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64` komutunu çalıştırılır ve indirmeye onay verilir. İndirmenin ardından .deb paketinden `sudo dpkg --install vscodepaketiismi.deb` ile VSCode kurulur. Ardından VSCode açılır ve geliştiricisi Seun LanLege olan `VsCode Action Buttons` eklentisini kurulur. Eklentinin yanındaki dişliye, oradan `Extension Settings`'e, oradan da `Edit in settings.json`'a tıklanır ve konfigürasyon dosyası açılır. Action Buttons'ta bir butonun konfigürasyonu 
 
-{
+    {
                 "name": "Make and Flash ",
                 "color": "white",
                 "command": "make && lm4flash gcc/${fileBasenameNoExtension}.bin",
