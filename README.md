@@ -31,6 +31,7 @@ https://github.com/KOU-Embedded-System-Lab/os-base-image/tree/master/debian adre
 ### Çabuk Kullanım
 
 Releases kısmından debian-kou-embedded-v2021-12-07.ova dosyası indirilir ve VirtualBox'ta içe aktarılır. Ardından çalıştırılır, sonra masaüstünden VSCode açılır.
+VSCode'da Open Folder komutu ile proje klasörü açılır, o andan itibaren proje geliştirmeye hazırdır, aşağıdaki Make and Flash butonuyla derlenip Tiva C'ye flaşlanabilir.
 
 ### Kurulan Paketler
 Debian kurulumunun ardından komut satırından itibaren kurulan tüm paketler şunlar:
