@@ -10,7 +10,7 @@ Creating a modern system image for the System Programming class of the Computer 
 
 After following the previous Linuxer's system image creation guide (until the GNU MCU Eclipse) and creating a base Debian XFCE installation, I decided to look into using VSCode and I apparently could, if I used VSCode as the text editor and the GUI for the commands that will make and flash the projects in the background. The guide I mentioned is: https://github.com/KOU-Embedded-System-Lab/os-base-image/tree/master/debian
 
-I found a GitHub repository where the Tiva C board toolchain (distributed with Texas Code Composer Studio) were uploaded and cloned it. According to the usage instructions I could just go into a project, run 'make' to build the project and flash the .bin file located in the 'gcc' folder, using 'lm4flash'. And it worked.
+I found a GitHub repository where the Tiva C board toolchain (distributed with Texas Code Composer Studio) was uploaded and cloned it. According to the usage instructions I could just go into a project, run 'make' to build the project and flash the .bin file located in the 'gcc' folder, using 'lm4flash'. And it worked.
 But your average student would not know about Linux and it could provide a huge difficulty curve for a fresh student to use a terminal, and I have discovered a VSCode addon called 'VsCode Action Buttons' by 'Seun LanLege', and saw how easy it was to create custom buttons to run custom commands. The user's settings.json is modified to include the custom commands and the syntax is something like:
 
 --->
@@ -34,6 +34,7 @@ Debian kurulumunun ardından komut satırından itibaren kurulan tüm paketler �
 
 `xfce4 xfce4-goodies bash-completion linux-headers-amd64 firmware-linux gcc make gcc-arm-none-eabi gdb-multiarch lm4flash elinks git`
 
+Ardından VirtualBox'ın sunduğu iso ile VirtualBox Guest Additions kurulur.
 
 ### VSCode Kurulumu ve Ayarlaması
 
@@ -51,7 +52,7 @@ Açılacak settings.json dosyasına syntax yönergesinde istenilen butonlar ekle
 
 ### Tiva C Toolchaini
 
-https://github.com/yuvadm/tiva-c adresinde Texas Instruments'in kendi toolchaini GitHub'a yüklenmiş halde bulunur. `git clone https://github.com/yuvadm/tiva-c` komutu ile bulunan klasörün içerisine klonlandıktan sonra yereldeki `tiva-c` klasörünün içerisinde `boards` klasörünün içerisinde Tiva C'nin kod numarasıyla (`ek-tm4c123gxl`) isimlendirilmiş klasörün içerisinde her birinin kendi Makefile'ı bulunan örnek projeler bulunmaktadır. `tiva-c` klasörünün içerisinde `inc`, `usblib` ve benzeri gereken tüm klasörler bulunmaktadır.
+https://github.com/yuvadm/tiva-c adresinde Texas Instruments'in kendi toolchaini olan TivaWare GitHub'a yüklenmiş halde bulunur. `git clone https://github.com/yuvadm/tiva-c` komutu ile bulunan klasörün içerisine klonlandıktan sonra yereldeki `tiva-c` klasörünün içerisinde `boards` klasörünün içerisinde Tiva C'nin kod numarasıyla (`ek-tm4c123gxl`) isimlendirilmiş klasörün içerisinde her birinin kendi Makefile'ı bulunan örnek projeler bulunmaktadır. `tiva-c` klasörünün içerisinde `inc`, `usblib` ve benzeri gereken tüm klasörler bulunmaktadır.
 
 ### Create New Project scripti
 Kendi yazdığım bu bash scripti kullanıcıdan proje ismini girdi olarak alıp ve temel projemizde gereken kelimeleri değiştirerek yeni bir proje oluşturmaktadır. Sözkonusu script `create_new_project.sh` adıyla bu repoda bulunacaktır. <!--- bulunmaktadır. --->
