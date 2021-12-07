@@ -50,9 +50,30 @@ elinks bir komut satırı tarayıcısıdır. `elinks url` şeklinde çalıştır
 
 Açılacak settings.json dosyasına syntax yönergesinde istenilen butonlar eklenip sol alttaki `Refreshes the action buttons` tooltipli ve reload ikonuna sahip olan reload butonuna tıklanılır.
 
+#### VsCode Action Buttons syntaxı
+VSCode'da kullanıcının settings.json dosyası içerisine şu konfigürasyon yazılmalıdır
+
+    "actionButtons": {
+        "loadNpmCommands":false, // npm komutlarının otomatik oluşturulmasını devre dışı bırakır.
+        "commands": [ // buraya alt kısımda çıkacak olan butonların her biri bir eleman olarak eklenilir
+            {
+                "name": "Make and Flash ", // Make and Flash komutunun ismi, bu komut projeyi derler ve flaşlar. İsimler değiştirilebilir.
+                "color": "white", // Renk
+                "command": "make && lm4flash gcc/${fileBasenameNoExtension}.bin", // Çalıştırılacak komut
+                // ${fileBasenameNoExtension} açık olan dosyanın uzantısız ismidir, örnek olarak `blinky.c` dosyası açıksa ${fileBasenameNoExtension} blinky'dir, gcc klasörünün içinde bulunacak olan .bin dosyasının ismi de proje klasörünün ismine bağlıdır.
+            },
+            {
+                "name": "Create New Project", // Create New Project scripti, 
+                "color": "white",
+                "singleInstance": true, // Aynı anda tek bir komutun çalışmasını sağlar, birden fazla çalıştırmaya izin vermez
+                "command": "echo 'please input the name of the new project:' && read x && sh /home/student/create_new_project.sh $x", // create_new_project.sh henüz bitmiş durumda değildir.
+            }
+        ]
+    }
+
 ### Tiva C Toolchaini
 
 https://github.com/yuvadm/tiva-c adresinde Texas Instruments'in kendi toolchaini olan TivaWare GitHub'a yüklenmiş halde bulunur. `git clone https://github.com/yuvadm/tiva-c` komutu ile bulunan klasörün içerisine klonlandıktan sonra yereldeki `tiva-c` klasörünün içerisinde `boards` klasörünün içerisinde Tiva C'nin kod numarasıyla (`ek-tm4c123gxl`) isimlendirilmiş klasörün içerisinde her birinin kendi Makefile'ı bulunan örnek projeler bulunmaktadır. `tiva-c` klasörünün içerisinde `inc`, `usblib` ve benzeri gereken tüm klasörler bulunmaktadır.
 
 ### Create New Project scripti
-Kendi yazdığım bu bash scripti kullanıcıdan proje ismini girdi olarak alıp ve temel projemizde gereken kelimeleri değiştirerek yeni bir proje oluşturmaktadır. Sözkonusu script `create_new_project.sh` adıyla bu repoda bulunacaktır. <!--- bulunmaktadır. --->
+Kendi yazdığım bu bash scripti kullanıcıdan proje ismini girdi olarak alıp ve temel projemizde gereken kelimeleri değiştirerek yeni bir proje oluşturmaktadır. Sözkonusu script `create_new_project.sh` adıyla bu repoda bulunacaktır. 
