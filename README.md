@@ -23,7 +23,7 @@ But your average student would not know about Linux and it could provide a huge 
 
 ### Özetle Ne Yapılır
 
-https://github.com/KOU-Embedded-System-Lab/os-base-image/tree/master/debian adresinde 2018'den beri kullanılan Eclipse imajının hazırlanması için talimatları bulunur. GNU MCU Eclipse başlığına kadar talimatları takip edilip temel bir Debian kurulumu oluşturulur. Ardından aşağıda belirtilen gerekli paketleri kurulur, sonrasında VSCode indirilip kurulur, kullanılacak olan eklenti kurulur ve ayarlanılır, ardından toolchain indirilip örnek projelerden biri Tiva C'ye flaşlanır ve geliştirme ortamının kurulumunun başarılı olduğuna emin olunur.
+https://github.com/KOU-Embedded-System-Lab/os-base-image/tree/master/debian adresinde Kocaeli Üniversitesi Bilgisayar Mühendisliği bölümünde Sistem Programlama dersinde 2018'den beri kullanılan Eclipse imajının hazırlanması için talimatlar bulunur. GNU MCU Eclipse başlığına kadar talimatları takip edilip temel bir Debian kurulumu oluşturulur. Ardından aşağıda belirtilen gerekli paketleri kurulur, sonrasında VSCode indirilip kurulur, kullanılacak olan eklenti kurulur ve ayarlanılır, ardından toolchain indirilip örnek projelerden biri Tiva C'ye flaşlanır ve geliştirme ortamının kurulumunun başarılı olduğuna emin olunur.
 
 ### Çabuk Kullanım
 
